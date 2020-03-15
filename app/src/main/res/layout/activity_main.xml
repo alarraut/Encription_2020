@@ -5,32 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <!-- Insertar texto-->
-    <EditText android:id="@+id/editartexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/editartexto" />
+    <EditText
+        android:id="@+id/editartexto"
+        android:layout_width="428dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/editartexto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Insertar llave-->
-    <EditText android:id="@+id/editarllave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/editarllave"
+        android:layout_width="390dp"
+        android:layout_height="64dp"
         android:hint="@string/editarllave"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editartexto" />
 
     <!-- Boton Codificar-->
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="codificar"
         android:text="@string/botoncod"
-        android:onClick="codificar"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarllave" />
 
     <!-- Boton decodificar-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="decodificar"
         android:text="@string/botondec"
-        android:onClick="decodificar"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
