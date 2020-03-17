@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Encription_2020</string>
-    <string name="editartexto">editartexto</string>
-    <string name="editarllave">editarllave</string>
-    <string name="botoncod">botoncod</string>
-    <string name="botondec">botondec</string>
+    <string name="editartexto">Escribe tu texto</string>
+    <string name="editarllave">Ingresa tu llave</string>
+    <string name="botoncod">Codificar</string>
+    <string name="botondec">Decodificar</string>
 </resources>
