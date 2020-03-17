@@ -7,27 +7,27 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editartexto"
+        android:id="@+id/edittexto"
         android:layout_width="367dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="328dp"
-        android:hint="@string/editartexto"
+        android:hint="@string/edittexto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editarllave"
+        android:id="@+id/editllave"
         android:layout_width="367dp"
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="64dp"
-        android:hint="@string/editarllave"
+        android:hint="@string/editllave"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editartexto" />
+        app:layout_constraintTop_toBottomOf="@+id/edittexto" />
 
     <Button
         android:id="@+id/button"
@@ -41,7 +41,7 @@
         android:text="@string/botoncod"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/editarllave" />
+        app:layout_constraintTop_toBottomOf="@+id/editllave" />
 
     <Button
         android:id="@+id/button2"
@@ -58,6 +58,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarllave" />
+        app:layout_constraintTop_toBottomOf="@+id/editllave" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
