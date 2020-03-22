@@ -49,10 +49,19 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Text Copied", Toast.LENGTH_SHORT).show();
 
-        // Envio de mensaje codificado para su despliegue en la nueva actividad
-        val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, mensajecod)
+        //Compartir mensaje
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, mensajecod)
+            type = "text/plain"
         }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+        // Envio de mensaje codificado para su despliegue en la nueva actividad
+      //  val intent = Intent(this, DisplayMessageActivity::class.java).apply {
+        //    putExtra(EXTRA_MESSAGE, mensajecod)
+        //}
         startActivity(intent)
 
     }
@@ -80,17 +89,24 @@ class MainActivity : AppCompatActivity() {
         myClip = ClipData.newPlainText("text", mensajedecod);
         myClipboard?.setPrimaryClip(myClip)
 
-        // Envio de mensaje decodificado para su despliegue en la nueva actividad
-        val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, mensajedecod)
+        //Share
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, mensajedecod)
+            type = "text/plain"
         }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+        // Envio de mensaje decodificado para su despliegue en la nueva actividad
+      //  val intent = Intent(this, DisplayMessageActivity::class.java).apply {
+        //    putExtra(EXTRA_MESSAGE, mensajedecod)
+        //}
         startActivity(intent)
 
     }
 
-
-
-    fun compartir (view: View?){
+       fun compartir (view: View?){
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
