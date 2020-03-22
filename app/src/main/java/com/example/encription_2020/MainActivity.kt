@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         val texto: String
         val llave: String
         val mensajecod: String
+        var myClipboard: ClipboardManager? = null
+        var myClip: ClipData? = null
        // val intent = Intent(this, DisplayMessageActivity::class.java)
 
         //Recepcion del texto y llave
@@ -40,9 +43,11 @@ class MainActivity : AppCompatActivity() {
         mensajecod = anta!!.codifica(texto, llave)
 
         // Se copia mensaje codificado al portapapeles
-        val clipboard = ContextCompat.getSystemService<Any>(Context.CLIPBOARD_SERVICE) as ClipboardManager?
-        val clip = ClipData.newPlainText("simple text", mensajecod)
-        clipboard!!.setPrimaryClip(clip)
+        myClipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager?;
+        myClip = ClipData.newPlainText("text", mensajecod);
+        myClipboard?.setPrimaryClip(myClip);
+
+        Toast.makeText(this, "Text Copied", Toast.LENGTH_SHORT).show();
 
         // Envio de mensaje codificado para su despliegue en la nueva actividad
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
@@ -58,7 +63,8 @@ class MainActivity : AppCompatActivity() {
         val texto: String
         val llave: String
         val mensajedecod: String
-
+        var myClipboard: ClipboardManager? = null
+        var myClip: ClipData? = null
 
         //Recepcion del texto y llave
         val editllave = findViewById<EditText>(R.id.editllave)
@@ -70,9 +76,9 @@ class MainActivity : AppCompatActivity() {
         mensajedecod = anta!!.decodifica(texto, llave)
 
         // Se copia mensaje codificado al portapapeles
-       // val clipboard: ClipboardManager? = ContextCompat.getSystemService<Any>(Context.CLIPBOARD_SERVICE) as ClipboardManager?
-        //val clip = ClipData.newPlainText("simple text", mensajedecod)
-        //clipboard!!.setPrimaryClip(clip)
+        myClipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager?;
+        myClip = ClipData.newPlainText("text", mensajedecod);
+        myClipboard?.setPrimaryClip(myClip)
 
         // Envio de mensaje decodificado para su despliegue en la nueva actividad
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
