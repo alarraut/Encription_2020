@@ -37,17 +37,16 @@ class MainActivity : AppCompatActivity() {
         llave = editllave.text.toString()
 
         // Envio de parametros para su codificacion
-        //mensajecod = anta!!.codifica(texto, llave)
+        mensajecod = anta!!.codifica(texto, llave)
 
         // Se copia mensaje codificado al portapapeles
-      //  val clipboard =
-        //    ContextCompat.getSystemService<Any>(Context.CLIPBOARD_SERVICE) as ClipboardManager?
-        //val clip = ClipData.newPlainText("simple text", mensajecod)
-        //clipboard!!.setPrimaryClip(clip)
+        val clipboard = ContextCompat.getSystemService<Any>(Context.CLIPBOARD_SERVICE) as ClipboardManager?
+        val clip = ClipData.newPlainText("simple text", mensajecod)
+        clipboard!!.setPrimaryClip(clip)
 
         // Envio de mensaje codificado para su despliegue en la nueva actividad
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, texto)
+            putExtra(EXTRA_MESSAGE, mensajecod)
         }
         startActivity(intent)
 
